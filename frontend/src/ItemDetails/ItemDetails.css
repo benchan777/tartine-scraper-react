@@ -1,0 +1,9 @@
+.ItemDetails {
+  width: 100%;
+  text-align: center;
+}
+
+.ItemDetails > img {
+  width: 350px;
+  height: auto;
+}
