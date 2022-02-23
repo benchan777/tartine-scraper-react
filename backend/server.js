@@ -1,7 +1,8 @@
 require('dotenv').config();
-const port = 3000;
+const port = 3001;
 const express = require('express');
 const menuData = require('./src/routes/menuData');
+const cors = require('cors');
 
 // Initialize App
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Routes
+app.use(cors());
 app.use('/api', menuData);
 
 app.get("/", (req, res) => {
