@@ -4,52 +4,36 @@ import MenuItems from "../MenuItems/MenuItems";
 import './MenuData.css';
 
 function MenuData() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:3001/api/scraper')
       .then(res => res.json())
       .then(result => {
-        setIsLoaded(true);
         setItems(result);
       }, error => {
-        setIsLoaded(true);
-        setError(error);
+        console.log(error);
       });
   }, []);
 
-  const data = Object.keys(items).map(key => {
-    const name = items[key]['name_for_customer'];
-    const description = items[key]['description'];
-    const image = items[key]['integrations']['external_image_url'];
-    let stock;
-
-    if (items[key]['in_stock'] === true) {
-      stock = 'In Stock'
-    } else {
-      stock = 'Out of Stock'
-    }
-
-    return(
-      <MenuItems
-        key = {name}
-        name = {name}
-        description = {description}
-        stock = {stock}
-        image = {image}
-      />
-    )
-  });
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <div>Loading...</div>;
+  if (items === null) {
+    return null;
   } else {
+    const data = Object.keys(items).map(key => {
+
+      return (
+        <MenuItems
+          id={key}
+          key={items[key]['name_for_customer']}
+          name={items[key]['name_for_customer']}
+          stock={items[key]['in_stock'] ? 'In Stock' : 'Out of Stock'}
+          image={items[key]['integrations']['external_image_url']}
+        />
+      );
+    });
+
     return (
-      <div className='MenuData'>
+      <div className="MenuData">
         {data}
       </div>
     );

@@ -1,17 +1,19 @@
-import './ItemDetails.css';
+import { Link } from 'react-router-dom';
+import './MenuItems.css';
 
 function MenuItems(props) {
-  const { name, description, stock, image } = props;
+  const { name, stock, image, id } = props;
 
   return (
-    <div className= 'ItemDetails'>
-      <img 
-        src= {image}
-        alt= {name}
+    <div className='ItemDetails'>
+      <img
+        src={image}
+        alt={name}
       />
-      <h3>Name: {name}</h3>
-      <div>Description: {description}</div>
-      <div>Stock Status: {stock}</div>
+      <Link to = {`/details/${id}`}>
+        <h3>{name}</h3>
+      </Link>
+      <div>{stock}</div>
     </div>
   );
 }
