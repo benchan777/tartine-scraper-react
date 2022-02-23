@@ -13,11 +13,9 @@ function MenuData() {
   }, []);
 
   if (items === null) {
-    console.log('Getting data...')
     return null;
   } else {
     const data = Object.keys(items).map(key => {
-
       return (
         <MenuItems
           id={key}
