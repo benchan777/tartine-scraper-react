@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MenuItems from "../MenuItems/MenuItems";
 import './MenuData.css';
 
@@ -9,14 +8,12 @@ function MenuData() {
   useEffect(() => {
     fetch('http://localhost:3001/api/scraper')
       .then(res => res.json())
-      .then(result => {
-        setItems(result);
-      }, error => {
-        console.log(error);
-      });
+      .then(result => setItems(result))
+      .catch(err => console.log(err));
   }, []);
 
   if (items === null) {
+    console.log('Getting data...')
     return null;
   } else {
     const data = Object.keys(items).map(key => {

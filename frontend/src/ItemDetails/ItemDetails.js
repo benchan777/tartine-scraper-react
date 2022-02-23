@@ -8,19 +8,10 @@ function ItemDetails() {
   const { id } = params;
 
   useEffect(() => {
-    async function fetchData() {
-      const data = await fetch('http://localhost:3001/api/scraper');
-      const json = await data.json();
-      return json;
-    }
-
-    fetchData()
-      .then(result => {
-        setItems(result);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    fetch('http://localhost:3001/api/scraper')
+      .then(res => res.json())
+      .then(result => setItems(result))
+      .catch(err => console.log(err));
   }, []);
 
   if (items === null) {

@@ -1,18 +1,11 @@
 import './App.css';
-// import MenuData from './MenuData/MenuData';
 import { Outlet } from 'react-router-dom';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <MenuData />
-//     </div>
-//   );
-// }
+import Title from './Title/Title';
 
 function App() {
   return (
     <div className="App">
+      <Title />
       <Outlet />
     </div>
   );
