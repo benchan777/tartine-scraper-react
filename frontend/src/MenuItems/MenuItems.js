@@ -1,6 +1,6 @@
 import './ItemDetails.css';
 
-function ItemDetails(props) {
+function MenuItems(props) {
   const { name, description, stock, image } = props;
 
   return (
@@ -16,4 +16,4 @@ function ItemDetails(props) {
   );
 }
 
-export default ItemDetails;
+export default MenuItems;

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import ItemDetails from "../ItemDetails/ItemDetails";
+import MenuItems from "../MenuItems/MenuItems";
 import './MenuData.css';
 
 function MenuData() {
@@ -33,7 +33,7 @@ function MenuData() {
     }
 
     return(
-      <ItemDetails
+      <MenuItems
         key = {name}
         name = {name}
         description = {description}
