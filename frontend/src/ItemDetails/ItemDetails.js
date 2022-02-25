@@ -8,7 +8,8 @@ function ItemDetails() {
   const { id } = params;
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/scraper')
+      // fetch('http://localhost:3001/api/scraper')
+      fetch('https://tartine-scraper-api.main.benchan.tech/api/scraper')
       .then(res => res.json())
       .then(result => setItems(result))
       .catch(err => console.log(err));
