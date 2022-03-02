@@ -1,0 +1,14 @@
+.in_stock {
+	color: green;
+	font-weight: bolder;
+	font-size: larger;
+}
+
+.out_stock {
+	color: red;
+	font-weight: bolder;
+}
+
+.ItemName {
+	color: black;
+}
