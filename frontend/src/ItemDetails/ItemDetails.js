@@ -24,7 +24,7 @@ function ItemDetails() {
           src={"https://static.bbot.menu" + items[id]['imageUrl']}
           alt={items[id]['name_for_customer']}
         />
-        <h2>Name: {items[id]['name_for_customer']}</h2>
+        <h2>{items[id]['name_for_customer']}</h2>
         <div>Description: {items[id]['description']}</div>
         <div>Price: {items[id]['price_string']}</div>
         <div>Stock: {items[id]['in_stock'] ? 'In Stock' : 'Out of Stock'}</div>
