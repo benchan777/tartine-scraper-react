@@ -21,7 +21,7 @@ function ItemDetails() {
     return (
       <div className='ItemDetails'>
         <img
-          src={items[id]['integrations']['external_image_url']}
+          src={"https://static.bbot.menu" + items[id]['imageUrl']}
           alt={items[id]['name_for_customer']}
         />
         <h2>Name: {items[id]['name_for_customer']}</h2>

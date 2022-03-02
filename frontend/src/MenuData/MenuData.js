@@ -23,7 +23,7 @@ function MenuData() {
           key={items[key]['name_for_customer']}
           name={items[key]['name_for_customer']}
           stock={items[key]['in_stock'] ? 'In Stock' : 'Out of Stock'}
-          image={items[key]['integrations']['external_image_url']}
+          image={"https://static.bbot.menu" + items[key]['imageUrl']}
         />
       );
     });
