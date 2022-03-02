@@ -1,0 +1,13 @@
+.Footer {
+	background-color: rgb(212, 125, 25);
+	position: absolute;
+	width: 100vw;
+	margin-top: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.Footer p {
+	color: white;
+	font-weight: bold;
+}
